@@ -1,6 +1,8 @@
-# staylife
+# StayLife
 
-> A Vue.js project
+M.StayLife with VueJS
+
+Demo: <http://m.staylife.cn>
 
 ## Build Setup
 
