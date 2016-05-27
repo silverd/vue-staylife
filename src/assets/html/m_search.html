@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      提交订单
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="../css/m_base.css" rel="stylesheet" />
+    <link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/weui.min.css" rel="stylesheet" />
+    <link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/jquery-weui.css" rel="stylesheet" />
+    <link href="../css/m_index.css" rel="stylesheet" />
+    
+    <script src="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/jquery-2.1.4.js"></script>
+    <script src="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/jquery-weui.js"></script>
+    <script src="http://cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="weui_search_bar m_search_bar" id="search_bar">
+      <form class="weui_search_outer">
+        <div class="weui_search_inner">
+          <i class="weui_icon_search">
+          </i>
+          <input type="search" class="weui_search_input" id="search_input" placeholder="搜索"
+          required/>
+          <a href="javascript:" class="weui_icon_clear" id="search_clear">
+          </a>
+        </div>
+        <label for="search_input" class="weui_search_text" id="search_text">
+          <i class="weui_icon_search"></i>
+          <span>输入酒店关键字</span>
+        </label>
+      </form>
+      <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
+    </div>
+    <div class="m_search_list" id="search_hotel">
+      <ul>
+      	
+      	<li class="weui_panel weui_panel_access" v-for="hotel_info in hotel_datas">
+		  <div class="weui_panel_bd dn">
+		    <div class="m_hotel_item">
+		      <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+		        <div class="weui_media_hd">
+		          <img class="weui_media_appmsg_thumb m_hotel_logo" src={{hotel_info.logo_url}}
+		          alt="">
+		        </div>
+		        <div class="weui_media_bd">
+		          <h4 class="weui_media_title">
+		            <span class="pr10">{{hotel_info.name}}</span>
+		          </h4>
+		          <p class="weui_media_desc">
+		            {{hotel_info.address}}
+		          </p>
+		          <div>
+		            <span class="m_hotel_tag" v-for="hotel_item_tag in hotel_info.tags" v-if="$index < 2"
+		            style="background-color:{{hotel_item_tag.color}}">
+		              {{hotel_item_tag.name}}
+		            </span>
+		            <span class="m_hotel_mark">评分<strong>{{hotel_info.stats.avg_score}}</strong>
+		            </span>
+		          </div>
+		        </div>
+		      </a>
+		    </div>
+		  </div>
+		  
+		  <div class="m_search_no_result">
+      		<p>目前Stay还未收录您心仪的酒店，</p>
+      		<p>我们后期会尽快添加。</p>
+      	  </div>
+		</li>
+      	
+      	
+      	
+        <!--<li class="weui_panel weui_panel_access">
+          <div class="weui_panel_bd">
+            <div class="m_hotel_item">
+              <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                  <img class="weui_media_appmsg_thumb m_hotel_logo" src="../img/69logo_150.jpg"
+                  alt="">
+                </div>
+                <div class="weui_media_bd">
+                  <h4 class="weui_media_title" id="u_id">
+                    <span class="pr10">标题一</span>
+                  </h4>
+                  <p class="weui_media_desc">
+				        喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登华尔道芙华尔道芙华尔道芙
+                  </p>
+                  <div>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_mark">评分<b>3.0</b>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="weui_panel weui_panel_access">
+          <div class="weui_panel_bd">
+            <div class="m_hotel_item">
+              <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                  <img class="weui_media_appmsg_thumb m_hotel_logo" src="../img/69logo_150.jpg"
+                  alt="">
+                </div>
+                <div class="weui_media_bd">
+                  <h4 class="weui_media_title" id="u_id">
+                    <span class="pr10">标题一</span>
+                  </h4>
+                  <p class="weui_media_desc">
+				        喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登华尔道芙华尔道芙华尔道芙
+                  </p>
+                  <div>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_mark">评分<b>3.0</b>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="weui_panel weui_panel_access">
+          <div class="weui_panel_bd">
+            <div class="m_hotel_item">
+              <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                  <img class="weui_media_appmsg_thumb m_hotel_logo" src="../img/69logo_150.jpg"
+                  alt="">
+                </div>
+                <div class="weui_media_bd">
+                  <h4 class="weui_media_title" id="u_id">
+                    <span class="pr10">标题一</span>
+                  </h4>
+                  <p class="weui_media_desc">
+				        喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登喜来登华尔道芙华尔道芙华尔道芙
+                  </p>
+                  <div>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_tag">定级奢华</span>
+                    <span class="m_hotel_mark">评分<b>3.0</b>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>-->
+      </ul>
+    </div>
+    
+    <script>
+    	var hotel_data=[{ 
+			  "id": "TTHlF-kcbMysXd4t-fHh02suKJeNvqR2pYXPzvjW8Ag=",
+		      "name": "上海闵行星河湾酒店",
+		      "name_en": "",
+		      "phone": "",
+		      "email": "",
+		      "web_site": "",
+		      "logo_url": "http://cdn.69night.cn/img_app/brand/154.jpg",
+		      "banner_url": "",
+		      "address": "上海闵行区都会路3799号",
+		      "district": "",
+		      "district_en": "",
+		      "city": "上海",
+		      "city_en": "",
+		      "province": "",
+		      "province_en": "",
+		      "country": "",
+		      "country_en": "",
+		      "country_en_short": "",
+		      "keywords": "",
+		      "longitude": "121.415304",
+		      "latitude": "31.093869",
+		      "poi_google": {
+		        "longitude": "121.409351",
+		        "latitude": "31.088123"
+		      },
+		      "breakfast": "",
+		      "bloc_id": "5t7KXw1SA2tL1OGA2yoMP8ryOhMPiyh2wtqDYi7RZGI=",
+		      "brand_id": "XWKNWeopTwZ5lLD01QyVjCSLeZ1ZZzmE63iY9VJ-y2Q=",
+		      "status": 1,
+		      "bb": "",
+		      "stats": {
+		        "avg_score": "4.2",
+		        "rate_times": 3,
+		        "scores": [
+		          {
+		            "name": "酒店位置",
+		            "field": "addr_score",
+		            "score": "4.3"
+		          },
+		          {
+		            "name": "服务质量",
+		            "field": "serv_score",
+		            "score": "4.2"
+		          },
+		          {
+		            "name": "环境卫生",
+		            "field": "env_score",
+		            "score": "4.2"
+		          },
+		          {
+		            "name": "设备设施",
+		            "field": "dev_score",
+		            "score": "4.2"
+		          }
+		        ]
+		      },
+		      "tags": [
+		        {
+		          "id": 6,
+		          "name": "特色设计",
+		          "color": "#4cc2d6"
+		        },
+		        {
+		          "id": 16,
+		          "name": "宠物空间",
+		          "color": "#4cc2d6"
+		        },
+		        {
+		          "id": 18,
+		          "name": "户外娱乐",
+		          "color": "#4cc2d6"
+		        }
+		      ],
+		      "poi_baidu": {
+		        "longitude": "121.415304",
+		        "latitude": "31.093869"
+		      },
+		      "img_list": null 	
+			    },
+			    { 
+			    "id": "TTHlF-kcbMysXd4t-fHh02suKJeNvqR2pYXPzvjW8Ag=",
+		      "name": "上海闵行星河湾酒店",
+		      "name_en": "",
+		      "phone": "",
+		      "email": "",
+		      "web_site": "",
+		      "logo_url": "http://cdn.69night.cn/img_app/brand/155.jpg",
+		      "banner_url": "",
+		      "address": "上海闵行区都会路3799号",
+		      "district": "",
+		      "district_en": "",
+		      "city": "上海",
+		      "city_en": "",
+		      "province": "",
+		      "province_en": "",
+		      "country": "",
+		      "country_en": "",
+		      "country_en_short": "",
+		      "keywords": "",
+		      "longitude": "121.415304",
+		      "latitude": "31.093869",
+		      "poi_google": {
+		        "longitude": "121.409351",
+		        "latitude": "31.088123"
+		      },
+		      "breakfast": "",
+		      "bloc_id": "5t7KXw1SA2tL1OGA2yoMP8ryOhMPiyh2wtqDYi7RZGI=",
+		      "brand_id": "XWKNWeopTwZ5lLD01QyVjCSLeZ1ZZzmE63iY9VJ-y2Q=",
+		      "status": 1,
+		      "bb": "",
+		      "stats": {
+		        "avg_score": "4.2",
+		        "rate_times": 3,
+		        "scores": [
+		          {
+		            "name": "酒店位置",
+		            "field": "addr_score",
+		            "score": "4.3"
+		          },
+		          {
+		            "name": "服务质量",
+		            "field": "serv_score",
+		            "score": "4.2"
+		          },
+		          {
+		            "name": "环境卫生",
+		            "field": "env_score",
+		            "score": "4.2"
+		          },
+		          {
+		            "name": "设备设施",
+		            "field": "dev_score",
+		            "score": "4.2"
+		          }
+		        ]
+		      },
+		      "tags": [
+		        {
+		          "id": 6,
+		          "name": "特色设计",
+		          "color": "#4cc2d6"
+		        },
+		        {
+		          "id": 16,
+		          "name": "宠物空间",
+		          "color": "#4cc2d6"
+		        },
+		        {
+		          "id": 18,
+		          "name": "户外娱乐",
+		          "color": "#4cc2d6"
+		        }
+		      ],
+		      "poi_baidu": {
+		        "longitude": "121.415304",
+		        "latitude": "31.093869"
+		      },
+		      "img_list": null
+			}
+		];
+		
+		window.onload=function(){
+			
+		   //在这里面写Vue.js代码
+			var example1 = new Vue({
+			  el: '#search_hotel',
+			  data: {
+			    hotel_datas: hotel_data,
+			  }
+			})
+		}
+    </script>
+  </body>
+
+</html>

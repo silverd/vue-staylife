@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="format-detection" content="telephone=no" />
+		<title>登录</title>
+		<link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/weui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			ul{ margin:0; padding:0; list-style-type:none;} 
+			ul#navlist{font:14px verdana;padding:0 15px 13px;color:#9c9c9c;margin-top: 45px;}
+			ul#navlist li span{ background: #FBFBFB;padding: 0 4px;}
+			ul#navlist li{float: left; height: 30px; width: 100%;}
+			ul#navlist .list1{border-bottom: 1px solid #dbdbdb;width: 100%;margin-bottom: -17px;}
+			#navlist a{display: block;color: #666;text-decoration: none;padding: 6px 5px;width: 100%;text-align: center;}
+			.icon_list{margin-top: 50px;text-align: center;}
+			.icon_list i{display: inline-block;margin: 0 auto;padding-right: 50px;background-size: 46px;width: 46px; height: 46px;}
+			.icon_list i:last-child,.icon_name_list span:last-child{padding-right: 0;}
+			.qq_ico{background: url(../img/QQ@2x.png) 0 0 no-repeat;}
+			.weibo_ico{background: url(../img/weibo@2x.png) 0 0 no-repeat;}
+			.weixin_ico{background: url(../img/weixin@2x.png) 0 0 no-repeat;}
+			.icon_name_list{text-align: center;}
+			.icon_name_list span{display: inline-block;padding-right: 50px;width: 46px;font-size: 12px;}
+		</style>
+	</head>
+	<body>
+		<div class="weui_cells weui_cells_form">
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="mobile" class="weui_input" type="number" name="mobile" placeholder="请输入手机号" pattern="[0-9]*" placeholder="请输入手机号"/>
+		    </div>
+		  </div>
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="password" class="weui_input" type="password" name="password" placeholder="请输入密码" />
+		    </div>
+		  </div>
+		</div>
+		<div class="weui_btn_area">
+		  <button @click="submitForm" type="button" class="weui_btn weui_btn_primary">登录</button>
+		</div>
+		<div class="weui_icon_area">
+			<ul id="navlist">
+				<li class="list1"></li>
+				<li class="list2"><a href=""><span>或使用第三方账号登录</span></a></li>
+			</ul>
+			<div class="icon_list">
+				<i class="qq_ico"></i>
+				<i class="weibo_ico"></i>
+				<i class="weixin_ico"></i>
+			</div>
+			<div class="icon_name_list">
+				<span>手机QQ</span>
+				<span>微博</span>
+				<span>微信</span>
+			</div>
+		</div>
+	</body>
+</html>

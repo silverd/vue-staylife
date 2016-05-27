@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>提交订单</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <link href="../css/m_base.css" rel="stylesheet" />
+    <link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/weui.min.css" rel="stylesheet" />
+    <!--<link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/jquery-weui.css" rel="stylesheet" />-->
+    <link href="../css/m_index.css" rel="stylesheet" />
+    
+
+    <script src="http://cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
+    <script src="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/swiper.js">
+    </script>
+    <script>
+      $(function() {
+        var mySwiper = new Swiper('.swiper-container', {
+          speed: 400,
+          spaceBetween: 100,
+          pagination: '.swiper-pagination',
+          paginationClickable: true
+        });
+      })
+    </script>
+  </head>
+
+  <body style="background: #eeeeee;">
+		<header class="m_header">
+	      <div class="tc"><i class="nav_back"></i>卓美亚酒店</div>
+	  </header>
+  	<div class="container">
+	    <div class="swiper-container hotel_detail_swiper" data-space-between='10'
+	    data-pagination='.swiper-pagination' data-autoplay="1000">
+	      <div class="swiper-wrapper">
+	      	<div>
+		        <div class="swiper-slide">
+		          <img src="../img/404_1.png" alt="">
+		        </div>
+		        <div class="swiper-slide">
+		          <img src="../img/m_nearby.jpg" alt="">
+		        </div>
+		        <div class="swiper-slide">
+		          <img src="../img/welcome_69.jpg" alt="">
+		        </div>
+	        </div>
+	        <div class="no_swiper_img">
+	        	
+	        </div>
+	      </div>
+	      <div class="swiper-pagination">
+	      </div>
+	    </div>
+	    <div class="m_hotel_info">
+	      <div class="weui_panel weui_panel_access">
+	        <div class="weui_panel_bd">
+	          <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+	            <div class="weui_media_hd">
+	              <img class="weui_media_appmsg_thumb m_hotel_logo" src="../img/69logo_150.jpg"
+	              alt="">
+	            </div>
+	            <div class="weui_media_bd">
+	              <h4 class="weui_media_title" id="u_id">
+	                <span class="pr10">标题一</span>
+	              </h4>
+	              <div>
+	                <span class="m_hotel_tag">定级奢华</span>
+	                <span class="m_hotel_tag">定级奢华</span>
+	              </div>
+	            </div>
+	          </a>
+	        </div>
+	      </div>
+	      <div class="m_hotel_score weui-row weui-no-gutter">
+	        <div class="weui-col-25 m_hotel_score_item">顶级用品<span class="score_num">4.0</span></div>
+	        <div class="weui-col-25 m_hotel_score_item">完美服务<span class="score_num">3.5</span></div>
+	        <div class="weui-col-25 m_hotel_score_item">绝佳地址<span class="score_num">4.2</span></div>
+	        <div class="weui-col-25 m_hotel_score_item">美味佳肴<span class="score_num">3.8</span></div>
+	      </div>
+	      <div class="m_hotel_assess">
+	        <span class="m_hotel_assess_item c_red">美丽心情</span>
+	        <span class="m_hotel_assess_item c_yellow">丰富早餐</span>
+	        <span class="m_hotel_assess_item c_blue">绝佳位置</span>
+	      </div>
+	      <div class="m_hotel_address">
+	        <i class="m_position_icon"></i>
+	        <span>上海市徐汇区肇嘉浜路7号</span>
+	      </div>
+	      <div class="m_hotel_phone">
+	        <i class="m_phone_icon"></i>
+	        <span>13911112222</span>
+	      </div>
+	    </div>
+	    <p class="m_hotel_share_text">本酒店常客分享</p>
+	    <div class="weui_panel weui_panel_access m_hotel_share">
+	      <div class="weui_panel_bd">
+	        <div class="m_card">
+	          <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg m_card_top">
+	            <div class="weui_media_hd">
+	              <img class="weui_media_appmsg_thumb br50" src="../img/69logo_150.jpg" alt="">
+	            </div>
+	            <div class="weui_media_bd">
+	              <h4 class="weui_media_title" id="u_id">
+	                <span class="pr10">标题一</span>
+	                <img src="../img/10.png" class="pr5" />
+	                <img src="../img/10.png" class="pr5" />
+	              </h4>
+	              <p class="weui_media_desc">
+	                <span class="pr10">一小时前</span>
+	                <span>上海市徐汇区</span>
+	              </p>
+	            </div>
+	          </a>
+	          <div class="m_card_main">
+	            <div>
+	              <img src="../img/welcome_69.jpg" class="m_card_main_img" />
+	            </div>
+	            <p class="m_card_main_text">
+	              由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+	            </p>
+	          </div>
+	          <div class="m_card_bottom">
+	            <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg m_card_hotel_info">
+	              <div class="weui_media_hd">
+	                <img class="weui_media_appmsg_thumb" src="../img/69logo_150.jpg" alt="">
+	              </div>
+	              <div class="weui_media_bd">
+	                <h4 class="weui_media_title hotel_name" id="hotel_name">
+	                  卓美亚托尼大酒店
+	                </h4>
+	                <p class="weui_media_desc">
+	                  <span class="">本次评分</span>
+	                  <span class="">3.0</span>
+	                </p>
+	              </div>
+	              <div class="m_card_arrow_right">
+	                <img src="../img/arrow_right_black@2x.png" />
+	              </div>
+	            </a>
+	            <div class="m_card_function">
+	              <div class="m_card_function_left l">
+	                <span class="m_card_function_zan">
+	                  <img src="../img/zan_hover@2x.png" />123
+	                </span>
+	                <span class="m_card_function_comment">
+	                  <img src="../img/comment_hover@2x.png" />325
+	                </span>
+	              </div>
+	              <div class="m_card_function_right r">
+	                <button>可约</button>
+	                <i class="i_invite_ico_1"></i>
+	                <i class="i_invite_ico_2"></i>
+	                <i class="i_invite_ico_3"></i>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="m_card">
+	          <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg m_card_top">
+	            <div class="weui_media_hd">
+	              <img class="weui_media_appmsg_thumb br50" src="../img/69logo_150.jpg" alt="">
+	            </div>
+	            <div class="weui_media_bd">
+	              <h4 class="weui_media_title" id="u_id">
+	                <span class="pr10">标题一</span>
+	                <img src="../img/10.png" class="pr5" />
+	                <img src="../img/10.png" class="pr5" />
+	              </h4>
+	              <p class="weui_media_desc">
+	                <span class="pr10">一小时前</span>
+	                <span>上海市徐汇区</span>
+	              </p>
+	            </div>
+	          </a>
+	          <div class="m_card_main">
+	            <div>
+	              <img src="../img/welcome_69.jpg" class="m_card_main_img" />
+	            </div>
+	            <p class="m_card_main_text">
+	              由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+	            </p>
+	          </div>
+	          <div class="m_card_bottom">
+	            <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg m_card_hotel_info">
+	              <div class="weui_media_hd">
+	                <img class="weui_media_appmsg_thumb" src="../img/69logo_150.jpg" alt="">
+	              </div>
+	              <div class="weui_media_bd">
+	                <h4 class="weui_media_title hotel_name" id="hotel_name">
+	                  卓美亚托尼大酒店
+	                </h4>
+	                <p class="weui_media_desc">
+	                  <span class="">本次评分</span>
+	                  <span class="">3.0</span>
+	                </p>
+	              </div>
+	              <div class="m_card_arrow_right">
+	                <img src="../img/arrow_right_black@2x.png" />
+	              </div>
+	            </a>
+	            <div class="m_card_function">
+	              <div class="m_card_function_left l">
+	                <span class="m_card_function_zan">
+	                  <img src="../img/zan_hover@2x.png" />123
+	                </span>
+	                <span class="m_card_function_comment">
+	                  <img src="../img/comment_hover@2x.png" />325
+	                </span>
+	              </div>
+	              <div class="m_card_function_right r">
+	                <button>可约</button>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    	<div></div>
+	    </div>
+    </div>
+    <script>
+    	$(function(){
+    		$(".m_card_function_right button").on("click",function(){
+    			$(".m_card_function_right").toggleClass('m_card_function_right_exp');
+    		})
+    	})
+    </script>
+  </body>
+
+</html>

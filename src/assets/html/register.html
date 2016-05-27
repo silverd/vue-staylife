@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    	<meta name="format-detection" content="telephone=no" />
+		<title>注册</title>
+		
+		<link href="http://7xp0uu.com2.z0.glb.qiniucdn.com/staylif/weui.min.css" rel="stylesheet" />
+		<style>
+			.weui_label{
+				width: 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="weui_cells weui_cells_form">
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="mobile" class="weui_input" type="number" name="mobile" placeholder="请输入手机号" pattern="[0-9]*" placeholder="请输入手机号"/>
+		    </div>
+		    <div class="weui_cell_ft">
+                <i class="weui_icon_warn"></i>
+            </div>
+		  </div>
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="password" class="weui_input" type="password" name="password" placeholder="请输入密码" />
+		    </div>
+		    <div class="weui_cell_ft">
+                <i class="weui_icon_warn"></i>
+            </div>
+		  </div>
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="r_password" class="weui_input" type="password" name="r_password" placeholder="请再次输入密码" />
+		    </div>
+		    <div class="weui_cell_ft">
+                <i class="weui_icon_warn"></i>
+            </div>
+		  </div>
+		  <div class="weui_cell">
+		    <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+		    <div class="weui_cell_bd weui_cell_primary">
+		      <input v-model="vcode" class="weui_input" type="number" name="vcode" placeholder="请输入验证码" />
+		    </div>
+		    <div class="weui_cell_ft">
+		      <i class="weui_icon_warn"></i>
+		      <button @click="sendVcode" type="button" class="weui_btn weui_btn_mini weui_btn_plain_primary" :class="{'weui_btn_disabled': btns.sendVcode.disabled}" :disabled="btns.sendVcode.disabled">{{btns.sendVcode.text}}</button>
+		    </div>
+		  </div>
+		</div>
+		<div class="weui_btn_area">
+		  <button @click="submitForm" type="button" class="weui_btn weui_btn_primary">确 定</button>
+		</div>
+	</body>
+</html>
